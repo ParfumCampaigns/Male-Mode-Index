@@ -1,33 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Parfum Campaigns</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 80px 20px;
-      background: #ffffff;
-      color: #111;
-      text-align: center;
-    }
-    h1 {
-      font-size: 42px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    p {
-      font-size: 18px;
-      color: #555;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Parfum Campaigns — Contemporary Fragrance Advertising Archive</title>
+  <meta name="description" content="A curated archive of contemporary fragrance advertising and visual campaign work. Clean, fast, and organized for reference." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://parfumcampaigns.github.io/parfum-campaigns/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Parfum Campaigns" />
+  <meta property="og:description" content="A curated archive of contemporary fragrance advertising and visual campaign work." />
+  <meta property="og:url" content="https://parfumcampaigns.github.io/parfum-campaigns/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Parfum Campaigns" />
+  <meta name="twitter:description" content="A curated archive of contemporary fragrance advertising and visual campaign work." />
+
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Parfum Campaigns",
+    "url":"https://parfumcampaigns.github.io/parfum-campaigns/",
+    "description":"A curated archive of contemporary fragrance advertising and visual campaign work."
+  }
+  </script>
 </head>
+
 <body>
-  <h1>Parfum Campaigns</h1>
-  <p>A curated archive of contemporary fragrance advertising and visual campaign work.</p>
+  <div class="wrap">
+    <header class="header">
+      <div class="brand">
+        <h1>Parfum Campaigns</h1>
+        <p>A curated archive of contemporary fragrance advertising and visual campaign work.</p>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="pill" href="./">Home</a>
+        <a class="pill" href="https://github.com/ParfumCampaigns/parfum-campaigns" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="controls" aria-label="Search and meta">
+      <div class="search" role="search">
+        <span aria-hidden="true">Search</span>
+        <input id="search" type="search" placeholder="Type a brand, fragrance, year, photographer, etc." autocomplete="off" />
+        <span class="meta" aria-hidden="true"><kbd>/</kbd></span>
+      </div>
+      <div class="meta"><span id="count">0</span> items</div>
+    </section>
+
+    <main class="grid" aria-label="Gallery">
+
+      <!-- PLACEHOLDER ITEMS (we’ll replace these after images are uploaded) -->
+
+      <article class="card" data-search="sample fragrance campaign">
+        <a data-lightbox href="assets/img/sample-01.jpg" data-title="Sample Campaign 01">
+          <div class="thumb">
+            <img src="assets/img/sample-01.jpg" alt="Sample fragrance campaign image" loading="lazy" width="1200" height="900" />
+            <div class="badge">Sample</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <h2 class="title">Sample Campaign 01</h2>
+          <p class="sub">Replace once real images are uploaded.</p>
+        </div>
+      </article>
+
+      <article class="card" data-search="sample fragrance campaign">
+        <a data-lightbox href="assets/img/sample-02.jpg" data-title="Sample Campaign 02">
+          <div class="thumb">
+            <img src="assets/img/sample-02.jpg" alt="Sample fragrance campaign image" loading="lazy" width="1200" height="900" />
+            <div class="badge">Sample</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <h2 class="title">Sample Campaign 02</h2>
+          <p class="sub">Replace once real images are uploaded.</p>
+        </div>
+      </article>
+
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Parfum Campaigns</div>
+      <div class="meta">Press <kbd>/</kbd> to search · <kbd>Esc</kbd> to close images</div>
+    </footer>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" alt="" />
+      <div class="lightbox-bar">
+        <div id="lightboxTitle"></div>
+        <button class="btn" id="lightboxClose" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
