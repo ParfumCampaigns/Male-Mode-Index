@@ -1,433 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Parfum Campaigns</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#111111;
-      --muted:#444444;
-      --border:#a2a9b1;
-      --link:#0645ad;
-      --link-visited:#0b0080;
-      --panel:#f8f9fa;
-      --sidebar-w: 250px;
-      --content-w: 980px;
-      --font: Georgia, "Times New Roman", Times, serif;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:var(--font);
-      line-height:1.45;
-      font-size:16px;
-    }
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
-    a:visited{color:var(--link-visited)}
-    .page{
-      display:flex;
-      min-height:100vh;
-      width:100%;
-    }
-    .sidebar{
-      width:var(--sidebar-w);
-      padding:16px 12px;
-      border-right:1px solid var(--border);
-      background:var(--bg);
-      position:sticky;
-      top:0;
-      align-self:flex-start;
-      height:100vh;
-      overflow:auto;
-    }
-    .site-title{
-      font-family:var(--sans);
-      font-weight:700;
-      font-size:20px;
-      margin:0 0 10px 0;
-    }
-    .sidebar-search{
-      width:100%;
-      padding:7px 8px;
-      border:1px solid var(--border);
-      border-radius:2px;
-      font-family:var(--sans);
-      font-size:13px;
-      margin:8px 0 12px 0;
-    }
-    .nav{
-      font-family:var(--sans);
-      font-size:13px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-    .nav li{margin:6px 0}
-    .nav a{display:inline-block}
-    .content{
-      flex:1;
-      padding:20px 18px 60px 18px;
-    }
-    .wrap{
-      max-width:var(--content-w);
-    }
-    h1{
-      font-family:var(--sans);
-      font-size:34px;
-      font-weight:700;
-      margin:0 0 6px 0;
-    }
-    .tagline{
-      margin:0 0 16px 0;
-      color:var(--muted);
-      font-size:16px;
-    }
-    .lede-grid{
-      display:grid;
-      grid-template-columns: 1fr 340px;
-      gap:18px;
-      margin:14px 0 18px 0;
-      align-items:start;
-    }
-    .lede-box{
-      border:1px solid var(--border);
-      background:var(--bg);
-      padding:12px 12px;
-      font-family:var(--font);
-    }
-    .infobox{
-      border:1px solid var(--border);
-      border-collapse:collapse;
-      width:100%;
-      background:var(--bg);
-      font-family:var(--sans);
-      font-size:13px;
-    }
-    .infobox th{
-      background:var(--panel);
-      border:1px solid var(--border);
-      padding:8px 10px;
-      text-align:center;
-      font-weight:700;
-      font-size:14px;
-    }
-    .infobox td{
-      border:1px solid var(--border);
-      padding:8px 10px;
-      vertical-align:top;
-    }
-    .infobox td:first-child{
-      width:38%;
-      font-weight:700;
-      color:#202122;
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #ffffff;
+      color: #000;
+      line-height: 1.55;
     }
 
-    .toc{
-      width:260px;
-      border:1px solid var(--border);
-      background:var(--panel);
-      padding:10px 12px;
-      margin:0 0 18px 0;
-      font-family:var(--sans);
-      font-size:13px;
-    }
-    .toc-title{
-      font-weight:700;
-      text-align:center;
-      margin:0 0 8px 0;
-    }
-    .toc ol{
-      margin:0;
-      padding-left:20px;
-    }
-    .toc li{margin:4px 0}
-    .section-title{
-      font-family:var(--sans);
-      font-size:22px;
-      font-weight:700;
-      margin:18px 0 8px 0;
-      border-bottom:1px solid var(--border);
-      padding-bottom:4px;
-    }
-    p{margin:10px 0}
-    ul{margin:10px 0 10px 20px}
-    .house-title{
-      font-family:var(--sans);
-      font-size:24px;
-      font-weight:800;
-      margin:22px 0 10px 0;
-    }
-    .house-subhead{
-      font-family:var(--sans);
-      font-size:18px;
-      font-weight:700;
-      margin:16px 0 6px 0;
-    }
-    .footer{
-      margin-top:24px;
-      padding-top:12px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-family:var(--sans);
-      font-size:12px;
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    /* IMAGE GRID (2-up, archival) */
-    .image-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:16px;
-      margin:16px 0 20px 0;
-    }
-    .image-grid img{
-      width:100%;
-      height:auto;
-      display:block;
-      border:1px solid var(--border);
-    }
-    .image-grid figure{
-      margin:0;
-    }
-    @media (max-width: 700px){
-      .image-grid{
-        grid-template-columns: 1fr;
-      }
+    aside {
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      font-size: 14px;
     }
 
-    @media (max-width: 980px){
-      .lede-grid{grid-template-columns:1fr}
-      .sidebar{display:none}
-      .content{padding:16px 14px 50px 14px}
-      .toc{width:100%}
+    aside h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    aside input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    aside li {
+      margin-bottom: 8px;
+    }
+
+    aside a {
+      text-decoration: none;
+      color: #0044cc;
+    }
+
+    main {
+      padding: 30px 40px;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 30px;
+    }
+
+    .house-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      display: block;
+    }
+
+    .house-subhead {
+      font-weight: bold;
+      margin-top: 24px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+      color: #444;
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar" aria-label="Site navigation">
-      <div class="site-title">Parfum Campaigns</div>
-      <input class="sidebar-search" type="search" placeholder="Search this page…" aria-label="Search this page" />
-      <ul class="nav">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#scope">Scope</a></li>
-        <li><a href="#site-structure">Site structure</a></li>
-        <li><a href="#image-standards">Image standards</a></li>
-        <li><a href="#seo-standards">SEO standards</a></li>
-        <li><a href="#style-guide">Style guide</a></li>
-        <li><a href="#change-log">Change log</a></li>
-        <li><a href="#references">References</a></li>
-        <li style="margin-top:10px;"><a href="#house-chanel">CHANEL</a></li>
-      </ul>
-    </aside>
+<div class="layout">
 
-    <!-- MAIN CONTENT -->
-    <main class="content">
-      <div class="wrap">
-        <h1>Parfum Campaigns</h1>
-        <p class="tagline">Independent editorial archive dedicated to the documentation and preservation of fragrance advertising, campaign imagery, and brand visual language.</p>
+  <aside>
+    <h1>Parfum Campaigns</h1>
+    <input type="text" placeholder="Search this page…">
 
-        <div class="lede-grid">
-          <div class="lede-box">
-            Parfum Campaigns functions as a reference system — not a marketplace, not a review platform, and not a promotional outlet.
-            It serves as a single source of structural and visual truth for the archive.
-          </div>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#scope">Scope</a></li>
+      <li><a href="#image-standards">Image standards</a></li>
+      <li><a href="#seo-standards">SEO standards</a></li>
+      <li><a href="#house-chanel">CHANEL</a></li>
+    </ul>
+  </aside>
 
-          <table class="infobox" aria-label="Parfum Campaigns infobox">
-            <tr><th colspan="2">Parfum Campaigns</th></tr>
-            <tr><td>Type</td><td>Independent editorial archive</td></tr>
-            <tr><td>Focus</td><td>Fragrance advertising campaigns</td></tr>
-            <tr><td>Layout</td><td>White background, grid-first</td></tr>
-            <tr><td>Image system</td><td>Descriptive filenames and alt text</td></tr>
-            <tr><td>Hosting</td><td>Static single-page HTML</td></tr>
-            <tr><td>Status</td><td>Active</td></tr>
-          </table>
-        </div>
+  <main>
 
-        <div class="toc" aria-label="Contents">
-          <div class="toc-title">Contents</div>
-          <ol>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#scope">Scope</a></li>
-            <li><a href="#site-structure">Site structure</a></li>
-            <li><a href="#image-standards">Image standards</a></li>
-            <li><a href="#seo-standards">SEO standards</a></li>
-            <li><a href="#style-guide">Style guide</a></li>
-            <li><a href="#change-log">Change log</a></li>
-            <li><a href="#references">References</a></li>
-          </ol>
-        </div>
+    <section id="overview">
+      <h2>Parfum Campaigns</h2>
+      <p>
+        Independent editorial archive dedicated to the documentation and preservation
+        of fragrance advertising, campaign imagery, and brand visual language.
+      </p>
+    </section>
 
-        <!-- OVERVIEW -->
-        <section id="overview">
-          <div class="section-title">Overview</div>
-          <p>
-            Parfum Campaigns is an independent archive focused on campaign imagery and visual language across fragrance houses.
-            The priority is documentation: images, era context, composition, and the structural advertising choices that made campaigns memorable.
-          </p>
-        </section>
+    <section id="house-chanel">
+      <div class="house-title">CHANEL (Paris, 1910)</div>
 
-        <!-- MISSION -->
-        <section id="mission">
-          <div class="section-title">Mission</div>
-          <p>
-            Preserve the visual record of fragrance advertising without promotional framing. This site exists to catalog and compare campaign systems across houses,
-            not to sell product, not to review, and not to “rank.”
-          </p>
-        </section>
+      <div class="image-grid">
+        <img src="assets/img/chanel-no5-print-campaign-classic-bottle.jpg"
+             alt="Chanel No. 5 print advertisement showing the rectangular perfume bottle against a minimal gradient background">
 
-        <!-- SCOPE -->
-        <section id="scope">
-          <div class="section-title">Scope</div>
-          <p>
-            The archive emphasizes campaigns that shaped brand perception: editorial print, billboards, film stills, and structured releases tied to recognizable eras.
-            Entries are written in a neutral documentary voice.
-          </p>
-        </section>
-
-        <!-- SITE STRUCTURE -->
-        <section id="site-structure">
-          <div class="section-title">Site structure</div>
-          <p>
-            Each house page follows a consistent, archival template: historical context, campaign language, signature eras, bottle/iconography notes, and archival notes.
-            Images are presented in a simple grid with descriptive filenames and non-decorative alt text.
-          </p>
-        </section>
-
-        <!-- IMAGE STANDARDS -->
-        <section id="image-standards">
-          <div class="section-title">Image standards</div>
-          <ul>
-            <li>White background pages. No hero banners. Grid-first layout.</li>
-            <li>Images must use descriptive, SEO-stable filenames (house-product-era-context.jpg).</li>
-            <li>Alt text must describe what is literally visible. No marketing language.</li>
-          </ul>
-        </section>
-
-        <!-- SEO STANDARDS -->
-        <section id="seo-standards">
-          <div class="section-title">SEO standards</div>
-          <ul>
-            <li>Use descriptive filenames and descriptive alt text for every image.</li>
-            <li>Keep copy factual and stable; avoid trend phrases and hype.</li>
-            <li>Prefer consistent headings and internal anchor links.</li>
-          </ul>
-        </section>
-
-        <!-- STYLE GUIDE -->
-        <section id="style-guide">
-          <div class="section-title">Style guide</div>
-          <p>
-            Voice is neutral, documentary, and structural. No sales language. No calls-to-action. No pricing. No affiliate framing.
-            The archive describes what the campaign language is doing, not how the fragrance “smells.”
-          </p>
-        </section>
-
-        <!-- CHANGE LOG -->
-        <section id="change-log">
-          <div class="section-title">Change log</div>
-          <ul>
-            <li><strong>2026-01-06:</strong> Added first house entry (CHANEL). Added CHANEL image grid.</li>
-          </ul>
-        </section>
-
-        <!-- REFERENCES -->
-        <section id="references">
-          <div class="section-title">References</div>
-          <p>
-            Sources for individual campaigns (photographer, director, publication date, and known credits) are recorded at the image level when verified.
-          </p>
-        </section>
-
-        <!-- FIRST HOUSE ENTRY -->
-        <section id="house-chanel">
-          <div class="house-title">CHANEL (Paris, 1910)</div>
-
-          <!-- CHANEL IMAGE GRID (2-up) -->
-          <div class="image-grid">
-            <figure>
-              <img
-                src="assets/chanel-no5-print-campaign-classic-bottle.jpg"
-                alt="Chanel No. 5 classic print advertisement showing the rectangular bottle on a neutral background"
-                loading="lazy"
-              >
-            </figure>
-
-            <figure>
-              <img
-                src="assets/chanel-mens-fragrance-campaign-monochrome-model.jpg"
-                alt="Chanel men’s fragrance campaign featuring a male model photographed in monochrome studio lighting"
-                loading="lazy"
-              >
-            </figure>
-          </div>
-
-          <div class="house-subhead">Historical / Context Overview</div>
-          <p>
-            Chanel is a Paris fashion house founded in 1910 whose fragrance work became one of the defining reference points of
-            20th-century luxury advertising. In the context of campaign history, Chanel consistently treats fragrance as identity
-            and myth—less “product story” and more cultural signal—built through controlled imagery, disciplined casting, and an
-            insistence on permanence.
-          </p>
-          <p>
-            For Parfum Campaigns, Chanel is included because its advertising language set enduring standards: minimal visual
-            noise, high editorial authority, and a repeated ability to make a single bottle feel like an institution.
-          </p>
-
-          <div class="house-subhead">Campaign &amp; Visual Language</div>
-          <p>Chanel campaigns typically operate on three structural principles:</p>
-          <ul>
-            <li><strong>Icon-first framing:</strong> the bottle or emblem is treated like a seal, not a prop.</li>
-            <li><strong>Editorial restraint:</strong> controlled color, clean negative space, and a refusal to “explain” the scent visually.</li>
-            <li><strong>Casting as architecture:</strong> faces are selected for posture and myth, not relatability—reinforcing distance, authority, and longevity.</li>
-          </ul>
-          <p>
-            Across decades, Chanel’s strongest work avoids trend-chasing. Even when campaigns become cinematic, the visual
-            message remains: this is not a seasonal release; it is a permanent object.
-          </p>
-
-          <div class="house-subhead">Signature Eras / Campaign References</div>
-          <ul>
-            <li><strong>No. 5 — The Icon Era (multi-decade):</strong> fragrance advertising as cultural mythology, positioned above fashion cycles.</li>
-            <li><strong>1990s–2000s cinematic luxury:</strong> film-scale storytelling with the bottle treated as a formal artifact.</li>
-            <li><strong>Modern men’s fragrance authority:</strong> clean architecture, monochrome discipline, command presence.</li>
-          </ul>
-
-          <div class="house-subhead">Bottle / Iconography Notes</div>
-          <p>
-            Chanel’s bottle language is geometric, strict, and intentionally unromantic. Packaging is treated like typography:
-            legibility over ornament, permanence over novelty.
-          </p>
-
-          <div class="house-subhead">Archival Notes</div>
-          <ul>
-            <li>Images are archived as advertising artifacts, not lifestyle content.</li>
-            <li>Credits are recorded only when verified.</li>
-            <li>Representative executions are prioritized over exhaustive duplication.</li>
-          </ul>
-
-          <div class="house-subhead">Closing</div>
-          <p>
-            Chanel is archived in Parfum Campaigns as a baseline house—proof that the strongest fragrance advertising does not
-            chase attention. It consolidates authority until the bottle feels inevitable.
-          </p>
-        </section>
-
-        <div class="footer">
-          Parfum Campaigns is an independent editorial archive. This site is documentation, not promotion.
-        </div>
+        <img src="assets/img/chanel-mens-fragrance-campaign-monochrome-model.jpg"
+             alt="Chanel men’s fragrance campaign featuring a male model photographed in monochrome studio lighting">
       </div>
-    </main>
-  </div>
+
+      <h3>Historical / Context Overview</h3>
+      <p>
+        Chanel is a Paris fashion house founded in 1910 whose fragrance work became one of
+        the defining reference points of 20th-century luxury advertising. In the context of
+        campaign history, Chanel consistently treats fragrance as identity and myth—less
+        product story and more cultural signal—built through controlled imagery, disciplined
+        casting, and an insistence on permanence.
+      </p>
+
+      <p>
+        For Parfum Campaigns, Chanel is included because its advertising language set
+        enduring standards: minimal visual noise, high editorial authority, and a repeated
+        ability to make a single bottle feel like an institution.
+      </p>
+
+      <h3>Campaign & Visual Language</h3>
+      <ul>
+        <li><strong>Icon-first framing:</strong> the bottle or emblem is treated like a seal, not a prop.</li>
+        <li><strong>Editorial restraint:</strong> controlled color, clean negative space, and refusal to explain the scent visually.</li>
+        <li><strong>Casting as architecture:</strong> faces are selected for posture and myth, not relatability.</li>
+      </ul>
+
+      <p>
+        Across decades, Chanel’s strongest work avoids trend-chasing. Even when campaigns
+        become cinematic, the visual message remains constant: this is not a seasonal
+        release; it is a permanent object.
+      </p>
+
+      <h3>Signature Eras / Campaign References</h3>
+      <ul>
+        <li><strong>No. 5 — The Icon Era:</strong> fragrance advertising positioned above fashion cycles.</li>
+        <li><strong>1990s–2000s cinematic luxury:</strong> film-scale storytelling with the bottle treated as artifact.</li>
+        <li><strong>Modern men’s fragrance authority:</strong> clean architecture, monochrome discipline, command presence.</li>
+      </ul>
+
+      <h3>Bottle / Iconography Notes</h3>
+      <p>
+        Chanel’s bottle language is geometric, strict, and intentionally unromantic.
+        Packaging is treated like typography: legibility over ornament, permanence over novelty.
+      </p>
+
+      <h3>Archival Notes</h3>
+      <ul>
+        <li>Images are archived as advertising artifacts, not lifestyle content.</li>
+        <li>Credits are recorded only when verified.</li>
+        <li>Representative executions are prioritized over exhaustive duplication.</li>
+      </ul>
+
+      <h3>Closing</h3>
+      <p>
+        Chanel is archived in Parfum Campaigns as a baseline house—proof that the strongest
+        fragrance advertising does not chase attention. It consolidates authority until the
+        bottle feels inevitable.
+      </p>
+    </section>
+
+    <div class="footer">
+      Parfum Campaigns is an independent editorial archive. This site is documentation, not promotion.
+    </div>
+
+  </main>
+</div>
 </body>
 </html>
