@@ -55,9 +55,10 @@
     table.registry-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 980px;
-      font-size: 14px;
+      min-width: 0;              /* CHANGED: allow the table to fit viewport */
+      font-size: 13px;           /* CHANGED: shrink one font size to avoid horizontal swipe */
       line-height: 1.45;
+      table-layout: fixed;       /* CHANGED: forces columns to respect available width */
     }
     .registry-table thead th {
       text-align: left;
@@ -69,12 +70,15 @@
       border-bottom: 1px solid #e6e6e6;
       padding: 10px 12px;
       vertical-align: bottom;
-      white-space: nowrap;
+      white-space: normal;       /* CHANGED: allow header text to wrap instead of forcing scroll */
     }
     .registry-table tbody td {
       border-bottom: 1px solid #f0f0f0;
       padding: 10px 12px;
       vertical-align: top;
+      white-space: normal;       /* CHANGED: allow long cells (especially photographers) to wrap */
+      overflow-wrap: anywhere;   /* CHANGED: prevents overflow on long names/phrases */
+      word-break: normal;
     }
     .registry-table tbody tr:last-child td { border-bottom: 0; }
     .registry-table td.rank {
@@ -84,14 +88,14 @@
       font-variant-numeric: tabular-nums;
     }
     .registry-table td.name {
-      width: 240px;
-      white-space: nowrap;
+      width: 220px;              /* CHANGED: slightly tighter to free space */
+      white-space: normal;       /* CHANGED: allow wrap if needed on smaller screens */
     }
     .registry-table td.campaigns {
-      width: 520px;
+      width: 420px;              /* CHANGED: tighter to prevent overflow */
     }
     .registry-table td.photogs {
-      width: 260px;
+      width: auto;               /* CHANGED: let this column take remaining width */
     }
   </style>
 </head>
