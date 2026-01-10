@@ -6,6 +6,7 @@
   <title>Male Model Index</title>
   <meta name="description" content="The Male Model Index is a museum-style registry documenting verified participation in global fashion and fragrance advertising (January 1972–December 2025). Rankings reflect institutional placement within the commercial system." />
   <link rel="stylesheet" href="assets/css/style.css" />
+ 
 
   <style>
     :root { color-scheme: light; }
@@ -96,7 +97,19 @@
     }
     .registry-table td.photogs {
       width: auto;
-    }
+    }body::after {
+  content: "malemodelindex.com";
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  z-index: 9999;
+}
+
   </style>
 </head>
 
