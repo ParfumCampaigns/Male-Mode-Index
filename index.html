@@ -3,412 +3,695 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Male Model Index</title><meta name="description" content="The Male Model Index: an archival registry documenting institutional male modeling participation from 1970–2025, ranked across five tiers by verified global commercial campaigns."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='white'/><text x='50' y='68' font-family='Georgia,serif' font-size='42' font-weight='700' fill='black' text-anchor='middle'>MMI</text></svg>">
+<title>Male Model Index — Edition I</title>
 <style>
-body {
-    max-width: 850px;
-    margin: 50px auto;
-    font-family: Georgia, serif;
-    line-height: 1.6;
-    color: #111;
-    padding: 0 20px;
-    background: #fff;
-}
-h1 { font-size: 2em; margin-bottom: 0.25em; }
-h2 { margin-top: 40px; }
-h3 { margin-top: 30px; }
-a { color: #1a6cc4; text-decoration: none; }
-a:hover { text-decoration: underline; }
-.nav-footer a { color: black; }
-hr { border: none; border-top: 1px solid #ccc; margin: 40px 0; }
-table { width: 100%; border-collapse: collapse; font-size: 0.92em; margin-top: 20px; }
-th { text-align: left; border-bottom: 2px solid #111; padding: 8px 6px; font-weight: bold; }
-td { padding: 6px 6px; border-bottom: 1px solid #ddd; vertical-align: top; }
-tr:nth-child(even) { background-color: #f9f9f9; }
-.subtitle { font-variant: small-caps; font-size: 1em; letter-spacing: 0.05em; margin-bottom: 2em; font-weight: bold; }
-.image-pair { display: flex; gap: 30px; align-items: flex-start; margin: 30px 0; }
-.image-pair .img-block { flex: 1; }
-.image-pair .img-block.large { flex: 1.4; }
-.image-pair img { width: 100%; display: block; }
-.image-pair .caption { font-size: 0.9em; margin-top: 8px; }
-.tier-section { margin-top: 30px; }
-.tier-title { font-size: 1em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
-.tier-def { font-style: italic; margin-bottom: 12px; }
-ol.tier-list { margin: 0 0 0 20px; padding: 0; }
-ol.tier-list li { margin-bottom: 2px; }
-.honorable { margin: 0 0 0 20px; padding: 0; }
-.honorable li { margin-bottom: 2px; }
-.nav-footer { text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 0.9em; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  body {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem 6rem;
+  }
+
+  /* ---------- Masthead ---------- */
+  header.masthead {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px double #333;
+  }
+
+  header.masthead h1 {
+    font-size: 2.75rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  header.masthead p.subtitle {
+    font-style: italic;
+    color: #555;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+
+  header.masthead p.edition-line {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Section typography ---------- */
+  section { margin-bottom: 3rem; }
+
+  h2 {
+    font-size: 1.55rem;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #333;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-style: italic;
+    color: #2b2b2b;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  strong { font-weight: 600; }
+
+  a { color: #4a3a1e; text-decoration: none; border-bottom: 1px solid #b8a67d; }
+  a:hover { border-bottom-color: #4a3a1e; }
+
+  /* ---------- Lists ---------- */
+  ul.plain, ol.plain {
+    margin: 0.5rem 0 1.25rem 2rem;
+  }
+  ul.plain li, ol.plain li { margin-bottom: 0.3rem; }
+
+  /* Tier registries — clean numbered list */
+  ol.tier {
+    list-style: none;
+    counter-reset: tier-item;
+    margin: 0.75rem 0 1.5rem 0;
+  }
+  ol.tier li {
+    counter-increment: tier-item;
+    padding: 0.4rem 0 0.4rem 3rem;
+    border-bottom: 1px dotted #c8c1ad;
+    position: relative;
+  }
+  ol.tier li::before {
+    content: counter(tier-item) ".";
+    position: absolute;
+    left: 0;
+    width: 2.5rem;
+    text-align: right;
+    color: #8a7f60;
+    font-variant-numeric: tabular-nums;
+  }
+  ol.tier li:last-child { border-bottom: none; }
+
+  .tier-header {
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #333;
+  }
+
+  .tier-header h3 {
+    margin-top: 0;
+    font-style: normal;
+    font-size: 1.3rem;
+    letter-spacing: 0.01em;
+    color: #1a1a1a;
+  }
+
+  .tier-header p.tier-def {
+    color: #555;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ---------- Reference figures ---------- */
+  .ref-figures {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  figure.ref {
+    max-width: 320px;
+    text-align: center;
+    margin: 0;
+  }
+
+  figure.ref .plate {
+    aspect-ratio: 3 / 4;
+    border: 1px solid #8a7f60;
+    background: #f5f0e0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0 8px,
+        rgba(138, 127, 96, 0.06) 8px 9px
+      );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a7f60;
+    font-style: italic;
+    font-size: 0.85rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  figure.ref figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  figure.ref figcaption .name {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  figure.ref figcaption .tier-note {
+    font-style: italic;
+    color: #666;
+    font-size: 0.85rem;
+  }
+
+  /* ---------- Appendix table ---------- */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0 2rem;
+    border-top: 1.5px solid #333;
+    border-bottom: 1.5px solid #333;
+  }
+
+  table.registry {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  table.registry thead th {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    border-bottom: 1px solid #333;
+    background: transparent;
+  }
+
+  table.registry td {
+    padding: 0.55rem 0.5rem;
+    vertical-align: top;
+    border-bottom: 1px solid #e0d9c5;
+  }
+
+  table.registry tr:last-child td { border-bottom: none; }
+
+  table.registry td.rank {
+    color: #8a7f60;
+    width: 2.75rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    padding-right: 0.75rem;
+  }
+
+  table.registry td.name {
+    font-weight: 600;
+    width: 12rem;
+  }
+
+  table.registry td.campaigns {
+    width: 40%;
+    color: #333;
+  }
+
+  table.registry td.photog {
+    width: 25%;
+    color: #333;
+    font-style: italic;
+  }
+
+  /* ---------- Edition footer ---------- */
+  .edition-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px double #333;
+  }
+
+  .edition-footer dl {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 0.5rem 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .edition-footer dt {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .edition-footer dd { color: #333; }
+
+  .dedication {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #c8c1ad;
+    font-style: italic;
+    color: #555;
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+  }
+
+  .colophon {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #8a7f60;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: white; font-size: 10.5pt; }
+    .container { max-width: 100%; padding: 1rem; }
+    h2, h3, .tier-header { page-break-after: avoid; }
+    table.registry { page-break-inside: auto; font-size: 9pt; }
+    table.registry tr { page-break-inside: avoid; }
+    figure.ref .plate { background: #f0f0f0; }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 640px) {
+    .container { padding: 2.5rem 1rem 4rem; }
+    header.masthead h1 { font-size: 2rem; }
+    h2 { font-size: 1.3rem; }
+    table.registry { font-size: 0.8rem; }
+    table.registry td.name { width: auto; }
+    table.registry td.campaigns, table.registry td.photog { width: auto; }
+    .edition-footer dl { grid-template-columns: 1fr; gap: 0.15rem; }
+    .edition-footer dd { margin-bottom: 0.75rem; }
+    .ref-figures { gap: 1rem; }
+    figure.ref { max-width: 100%; }
+  }
 </style>
 </head>
 <body>
+<div class="container">
 
-<h1>Male Model Index</h1>
-<p class="subtitle">Methodology: Tiers, Rankings, and Institutional Placement</p>
+<header class="masthead">
+  <h1>Male Model Index</h1>
+  <p class="subtitle">Methodology: Tiers, Rankings, and Institutional Placement</p>
+  <p class="edition-line">Edition I · 1972–2025 · Registry Closed</p>
+</header>
 
-<h2>Purpose of the Index</h2>
+<!-- ================= PURPOSE ================= -->
+<section id="purpose">
+  <h2>Purpose of the Index</h2>
+  <p>The Male Model Index is an archival instrument designed to document participation within the highest commercial tier of the international fashion and fragrance advertising system. It is not intended to evaluate beauty, charisma, popularity, cultural relevance, or public recognition in isolation.</p>
+  <p>Its purpose is to preserve a factual and verifiable record of institutional participation, defined by measurable engagement with global commercial campaigns produced, financed, and distributed by established fashion houses, fragrance brands, and their affiliated advertising agencies.</p>
+  <p>The index treats male modeling as a professional commercial system, not a lifestyle category, celebrity hierarchy, or cultural popularity register. Rankings reflect position within that system, not external fame.</p>
+</section>
 
-<p>The <strong>Male Model Index</strong> is an archival instrument designed to document participation within the highest commercial tier of the international fashion and fragrance advertising system. It is not intended to evaluate beauty, charisma, popularity, cultural relevance, or public recognition in isolation.</p>
+<!-- ================= GOVERNANCE ================= -->
+<section id="governance">
+  <h2>Governance &amp; Editorial Accountability</h2>
+  <p>All inclusions, tier assignments, and ordinal rankings within the Male Model Index are issued under a two-layer governance model consisting of the Index Curator, <strong>Jake Hall</strong> (Editor-in-Chief and accountable signatory); <a href="https://thecommercialmale.com/gigi-sozzani.html">Gigi Sozzani, Editor</a>; and an <strong>Editorial Review Board</strong>, whose members include individuals who previously served on the staff of the now-defunct <a href="https://it.wikipedia.org/wiki/L%27Uomo_Vogue">L'Uomo Vogue</a>.</p>
+  <p>The Curator retains final responsibility for the published record and is accountable for methodological consistency across the full registry.</p>
+  <p>Determinations are made from verified institutional evidence, including <a href="https://it.wikipedia.org/wiki/L%27Uomo_Vogue">L'Uomo Vogue's top 25 male models list.</a> Among those featured are some of the most recognizable and influential male models in the world, including David Gandy, Simon Nessman, Sean O'Pry, and Marlon Teixeira.</p>
+  <p>The Editorial Review Board evaluates evidentiary sufficiency, flags internal inconsistencies, and may submit formal challenges or dissents that are recorded as part of the archival file. This structure strengthens auditability without converting the Index into a vote, committee compromise, or popularity mechanism.</p>
+  <p>The Male Model Index does not derive authority from agreement. Its authority derives from documented evidence, published standards, and accountable editorial process. Public submissions are not used to determine ranking; however, documented corrections may be submitted for review under the evidentiary standard and, if accepted, are recorded as a disclosed amendment in a subsequent edition.</p>
+</section>
 
-<p>Its purpose is to preserve a <strong>factual and verifiable record of institutional participation</strong>, defined by measurable engagement with global commercial campaigns produced, financed, and distributed by established fashion houses, fragrance brands, and their affiliated advertising agencies.</p>
+<!-- ================= VISUAL REFERENCE POLICY ================= -->
+<section id="visual-policy">
+  <h2>Visual Reference Policy</h2>
+  <p>This registry includes two visual references only: <strong>Michael Flinn</strong> and <strong>Ric Arango</strong>. These images are presented solely as historical orientation anchors, not as honorifics, endorsements, or aesthetic comparisons.</p>
+  <p>No other individuals are illustrated. The Male Model Index functions as a textual and archival registry; images are intentionally limited to prevent aesthetic bias, era distortion, celebrity emphasis, or reputational drift.</p>
+  <p>The inclusion of exactly two reference images is intentional, limited, and permanent for this edition. It does not imply hierarchy beyond the ordinal ranking already established.</p>
 
-<p>The index treats male modeling as a <strong>professional commercial system</strong>, not a lifestyle category, celebrity hierarchy, or cultural popularity register. Rankings reflect <strong>position within that system</strong>, not external fame.</p>
+  <div class="ref-figures">
+    <!-- Insert Michael Flinn / Hugo Boss reference image inside .plate -->
+    <figure class="ref">
+      <div class="plate">Reference plate<br>Michael Flinn — Hugo Boss campaign</div>
+      <figcaption>
+        <span class="name">Michael Flinn</span>
+        <span class="tier-note">Tier 1 reference figure</span>
+      </figcaption>
+    </figure>
+    <!-- Insert Ric Arango / Calvin Klein Obsession reference image inside .plate -->
+    <figure class="ref">
+      <div class="plate">Reference plate<br>Ric Arango — Calvin Klein Obsession for Men</div>
+      <figcaption>
+        <span class="name">Ric Arango</span>
+        <span class="tier-note">Tier 2 institutional legend</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
 
-<p>All inclusions, tier assignments, and ordinal rankings within the Male Model Index are issued under a two-layer governance model consisting of the <strong>Index Curator, Jake Hall (Editor-in-Chief and accountable signatory)</strong>; <a href="https://thecommercialmale.com/gigi-sozzani.html">Gigi Sozzani, Editor</a>; and an <strong>Editorial Review Board</strong>, whose members include individuals who previously served on the staff of the now-defunct <a href="https://it.wikipedia.org/wiki/L%27Uomo_Vogue">L'Uomo Vogue</a>.</p>
+<!-- ================= TEMPORAL SCOPE ================= -->
+<section id="temporal-scope">
+  <h2>Temporal Scope (Registry Lock)</h2>
+  <p>This index covers verified institutional commercial participation occurring between <strong>January 1970 and December 2025</strong>, inclusive. All rankings, tier assignments, and inclusion determinations are fixed as of December 31, 2025. No work executed outside this period is eligible for consideration within this edition of the Male Model Index.</p>
+</section>
 
-<p>The Curator retains final responsibility for the published record and is accountable for methodological consistency across the full registry.</p>
+<!-- ================= FOUNDATIONAL ASSUMPTIONS ================= -->
+<section id="assumptions">
+  <h2>Foundational Assumptions</h2>
+  <h4>Commercial advertising is hierarchical.</h4>
+  <p>Not all campaigns carry equal institutional weight. A global fragrance campaign produced for print, billboard, airport, and international magazine circulation represents a materially different level of commitment than editorial spreads, regional lookbooks, catalog work, or digital-only placements.</p>
+  <h4>Institutional trust is cumulative.</h4>
+  <p>Models repeatedly selected by top-tier brands over multiple years demonstrate compounding institutional trust. This trust functions as a measurable professional asset within the commercial system.</p>
+  <h4>Visibility alone is insufficient.</h4>
+  <p>Editorial prominence, runway presence, acting careers, social recognition, or media visibility do not qualify a model for higher placement unless anchored by verified global commercial work.</p>
+  <h4>Timing and era matter.</h4>
+  <p>Campaigns executed during the print-dominant era required greater institutional commitment, higher budgets, and longer deployment cycles than later digital-era placements. Rankings account for historical context rather than flattening eras.</p>
+</section>
 
-<p>Determinations are made from verified institutional evidence, including <a href="https://it.wikipedia.org/wiki/L%27Uomo_Vogue">L'Uomo Vogue's top 25 male models list.</a> Among those featured are some of the most recognizable and influential male models in the world, including David Gandy, Simon Nessman, Sean O'Pry, and Marlon Teixeira. 
-
-
-<p>The Editorial Review Board evaluates evidentiary sufficiency, flags internal inconsistencies, and may submit formal challenges or dissents that are recorded as part of the archival file. This structure strengthens auditability without converting the Index into a vote, committee compromise, or popularity mechanism (documented global commercial campaigns, brand relationships, geographic scope, recurrence, and historical context).</p>
-
-<p>The Male Model Index does not derive authority from agreement. Its authority derives from <strong>documented evidence, published standards, and accountable editorial process</strong>. Public submissions are not used to determine ranking; however, documented corrections may be submitted for review under the evidentiary standard and, if accepted, are recorded as a disclosed amendment in a subsequent edition.</p>
-
-<hr>
-
-<h2>Visual Reference Policy</h2>
-
-<p>This registry includes two visual references only: Michael Flinn and Ric Arango. These images are presented solely as historical orientation anchors, not as honorifics, endorsements, or aesthetic comparisons.</p>
-
-<p>No other individuals are illustrated. The Male Model Index functions as a textual and archival registry; images are intentionally limited to prevent aesthetic bias, era distortion, celebrity emphasis, or reputational drift.</p>
-
-<p>The inclusion of exactly two reference images is <strong>intentional, limited, and permanent</strong> for this edition. It does not imply hierarchy beyond the ordinal ranking already established.</p>
-
-<div class="image-pair">
-    <div class="img-block large">
-        <img src="assets/img/michael-flinn-hugo-boss-campaign-male-model.jpg" alt="Michael Flinn in a Hugo Boss campaign image, serving as a reference figure for the Male Model Index.">
-        <p class="caption"><strong>Michael Flinn</strong> &mdash; Tier 1 reference figure (reference image).</p>
-    </div>
-    <div class="img-block">
-        <img src="assets/img/ric-arango-calvin-klein-obsession-for-men-campaign.jpg" alt="Ric Arango in a Calvin Klein Obsession for Men campaign image, serving as a reference figure for the Male Model Index.">
-        <p class="caption"><strong>Ric Arango</strong> &mdash; Tier 2 institutional legend (reference image).</p>
-    </div>
-</div>
-
-<hr>
-
-<h2>Temporal Scope (Registry Lock)</h2>
-
-<p>This index covers verified institutional commercial participation occurring between January 1970 and December 2025, inclusive. All rankings, tier assignments, and inclusion determinations are fixed as of December 31, 2025. No work executed outside this period is eligible for consideration within this edition of the Male Model Index.</p>
-
-<hr>
-
-<h2>Foundational Assumptions</h2>
-
-<p><strong>Commercial advertising is hierarchical.</strong> Not all campaigns carry equal institutional weight. A global fragrance campaign produced for print, billboard, airport, and international magazine circulation represents a materially different level of commitment than editorial spreads, regional lookbooks, catalog work, or digital-only placements.</p>
-
-<p><strong>Institutional trust is cumulative.</strong> Models repeatedly selected by top-tier brands over multiple years demonstrate compounding institutional trust. This trust functions as a measurable professional asset within the commercial system.</p>
-
-<p><strong>Visibility alone is insufficient.</strong> Editorial prominence, runway presence, acting careers, social recognition, or media visibility do not qualify a model for higher placement unless anchored by verified global commercial work.</p>
-
-<p><strong>Timing and era matter.</strong> Campaigns executed during the print-dominant era required greater institutional commitment, higher budgets, and longer deployment cycles than later digital-era placements. Rankings account for historical context rather than flattening eras.</p>
-
-<hr>
-
-<h2>How Tiers Function</h2>
-
-<p>Tiers represent structural classes within the global commercial system. They are not stylistic groupings and do not imply aesthetic or qualitative judgment.</p>
-
-<ul>
+<!-- ================= HOW TIERS FUNCTION ================= -->
+<section id="how-tiers-function">
+  <h2>How Tiers Function</h2>
+  <p>Tiers represent structural classes within the global commercial system. They are not stylistic groupings and do not imply aesthetic or qualitative judgment.</p>
+  <ul class="plain">
     <li>Tiers are ranked bands, not separate lists.</li>
     <li>Movement between tiers requires evidence that a model occupied a fundamentally different role within the system.</li>
     <li>Tiers are contiguous blocks within a single ordinal ranking.</li>
-</ul>
+  </ul>
+</section>
 
-<hr>
+<!-- ================= TIERED REGISTRY ================= -->
+<section id="registry">
+  <h2>Tiers and Ranked Registry</h2>
 
-<h2>Tiers and Ranked Registry</h2>
+  <div class="tier-header">
+    <h3>Tier 1 — Reference Figures</h3>
+    <p class="tier-def">Models whose careers function as reference standards within the global commercial advertising system.</p>
+  </div>
+  <ol class="tier">
+    <li>Michael Flinn</li>
+    <li>David Gandy</li>
+    <li>Mark Vanderloo</li>
+    <li>Jeff Aquilon</li>
+    <li>Sean O'Pry</li>
+    <li>Marcus Schenkenberg</li>
+    <li>Tyson Beckford</li>
+  </ol>
 
-<div class="tier-section">
-    <p class="tier-title">Tier 1 &mdash; Reference Figures</p>
-    <p class="tier-def">Tier 1 contains models whose careers function as reference standards within the global, commercial advertising system.</p>
-    <ol class="tier-list" start="1">
-        <li>Michael Flinn</li>
-        <li>David Gandy</li>
-        <li>Mark Vanderloo</li>
-        <li>Jeff Aquilon</li>
-        <li>Sean O'Pry</li>
-        <li>Marcus Schenkenberg</li>
-        <li>Tyson Beckford</li>
-    </ol>
-</div>
+  <div class="tier-header">
+    <h3>Tier 2 — Institutional Legends</h3>
+    <p class="tier-def">Models with sustained, multi-year global presence repeatedly entrusted with major commercial campaigns.</p>
+  </div>
+  <ol class="tier" start="8" style="counter-reset: tier-item 7;">
+    <li>Tyson Ballou</li>
+    <li>Alton Mason</li>
+    <li>Jon Kortajarena</li>
+    <li>Lucky Blue Smith</li>
+    <li>Noah Mills</li>
+    <li>Bruce Hulse</li>
+    <li>Matt Norklun</li>
+    <li>Werner Schreyer</li>
+    <li>Terrence Sheahan</li>
+    <li>Tony Spinelli</li>
+    <li>Michael Ives</li>
+    <li>Michael Bergin</li>
+    <li>Walter Schupfer</li>
+    <li>Cameron Alborzian</li>
+    <li>John Pearson</li>
+    <li>Antonio Sabato Jr.</li>
+    <li>Ric Arango</li>
+    <li>Alex Lundqvist</li>
+    <li>Tony Ward</li>
+    <li>Hoyt Richards</li>
+    <li>Joel West</li>
+    <li>Larry Scott</li>
+    <li>David Boals</li>
+  </ol>
 
-<div class="tier-section">
-    <p class="tier-title">Tier 2 &mdash; Institutional Legends</p>
-    <p class="tier-def">Tier 2 includes models with sustained, multi-year global presence repeatedly entrusted with major commercial campaigns.</p>
-    <ol class="tier-list" start="8">
-        <li>Tyson Ballou</li>
-        <li>Alton Mason</li>
-        <li>Jon Kortajarena</li>
-        <li>Lucky Blue Smith</li>
-        <li>Noah Mills</li>
-        <li>Bruce Hulse</li>
-        <li>Matt Norklun</li>
-        <li>Werner Schreyer</li>
-        <li>Terrence Sheahan</li>
-        <li>Tony Spinelli</li>
-        <li>Michael Ives</li>
-        <li>Michael Bergin</li>
-        <li>Walter Schupfer</li>
-        <li>Cameron Alborzian</li>
-        <li>John Pearson</li>
-        <li>Antonio Sabato Jr.</li>
-        <li>Ric Arango</li>
-        <li>Alex Lundqvist</li>
-        <li>Tony Ward</li>
-        <li>Hoyt Richards</li>
-        <li>Joel West</li>
-        <li>Larry Scott</li>
-        <li>David Boals</li>
-    </ol>
-</div>
+  <div class="tier-header">
+    <h3>Tier 3 — Global Commercial Anchors</h3>
+    <p class="tier-def">High-frequency global commercial performers who carried brands internationally for defined periods.</p>
+  </div>
+  <ol class="tier" style="counter-reset: tier-item 30;">
+    <li>Simon Nessman</li>
+    <li>Marlon Teixeira</li>
+    <li>Evandro Soldati</li>
+    <li>Brad Kroenig</li>
+    <li>Mathias Lauridsen</li>
+    <li>Clément Chabernaud</li>
+    <li>Lars Burmeister</li>
+    <li>Johannes Huebl</li>
+    <li>Baptiste Giabiconi</li>
+    <li>Garrett Neff</li>
+    <li>Nacho Figueras</li>
+    <li>Gabriel Aubry</li>
+    <li>Oriol Elcacho</li>
+    <li>Andres Velencoso</li>
+    <li>Chad White</li>
+    <li>Jason Shaw</li>
+    <li>Ben Hill</li>
+    <li>David Fumero</li>
+    <li>Jack Scalia</li>
+    <li>Matt McColm</li>
+    <li>Fabio Lanzoni</li>
+    <li>Boris Kodjoe</li>
+    <li>Godfrey Gao</li>
+    <li>Broderick Hunter</li>
+    <li>Hu Bing</li>
+    <li>Oliver Cheshire</li>
+    <li>Jordan Barrett</li>
+    <li>Kit Butler</li>
+    <li>Francisco Lachowski</li>
+    <li>Tobias Sorensen</li>
+  </ol>
 
-<div class="tier-section">
-    <p class="tier-title">Tier 3 &mdash; Global Commercial Anchors</p>
-    <p class="tier-def">Tier 3 models are high-frequency global commercial performers who carried brands internationally for defined periods.</p>
-    <ol class="tier-list" start="31">
-        <li>Simon Nessman</li>
-        <li>Marlon Teixeira</li>
-        <li>Evandro Soldati</li>
-        <li>Brad Kroenig</li>
-        <li>Mathias Lauridsen</li>
-        <li>Cl&eacute;ment Chabernaud</li>
-        <li>Lars Burmeister</li>
-        <li>Johannes Huebl</li>
-        <li>Baptiste Giabiconi</li>
-        <li>Garrett Neff</li>
-        <li>Nacho Figueras</li>
-        <li>Gabriel Aubry</li>
-        <li>Oriol Elcacho</li>
-        <li>Andres Velencoso</li>
-        <li>Chad White</li>
-        <li>Jason Shaw</li>
-        <li>Ben Hill</li>
-        <li>David Fumero</li>
-        <li>Jack Scalia</li>
-        <li>Matt McColm</li>
-        <li>Fabio Lanzoni</li>
-        <li>Boris Kodjoe</li>
-        <li>Godfrey Gao</li>
-        <li>Broderick Hunter</li>
-        <li>Hu Bing</li>
-        <li>Oliver Cheshire</li>
-        <li>Jordan Barrett</li>
-        <li>Kit Butler</li>
-        <li>Francisco Lachowski</li>
-        <li>Tobias Sorensen</li>
-    </ol>
-</div>
+  <div class="tier-header">
+    <h3>Tier 4 — Era-Defining / Strong Period Figures</h3>
+    <p class="tier-def">Models whose institutional relevance and global reach exceeded that of Tier 5, but were concentrated within a specific era, market, or brand relationship.</p>
+  </div>
+  <ol class="tier" style="counter-reset: tier-item 60;">
+    <li>Ridzman Zidaine</li>
+    <li>Fernando Lindez</li>
+    <li>Babacar Ndoye</li>
+    <li>Badhiel Lony Nyang</li>
+    <li>Mathieu Simoneau</li>
+    <li>Leon Dame</li>
+    <li>Jamie Dornan</li>
+    <li>Channing Tatum</li>
+    <li>Mark Wahlberg</li>
+    <li>Luka Sabbat</li>
+    <li>Pietro Boselli</li>
+    <li>Alexandre Cunha</li>
+    <li>Ivan de Pineda</li>
+    <li>Albert Delegue</li>
+    <li>Michel de Windt</li>
+    <li>Tim Easton</li>
+    <li>Enrique Palacios</li>
+    <li>Tomas Skoloudik</li>
+    <li>Sterling St. Jacques</li>
+    <li>Urs Althaus</li>
+    <li>Adonis Bosso</li>
+    <li>Fernando Cabral</li>
+    <li>Bill Curry</li>
+    <li>Renauld White</li>
+  </ol>
 
-<div class="tier-section">
-    <p class="tier-title">Tier 4 &mdash; Era-Defining / Strong Period Figures</p>
-    <p class="tier-def">Tier 4 includes models whose institutional relevance and global reach exceeded that of Tier 5, but were concentrated within a specific era, market, or brand relationship.</p>
-    <ol class="tier-list" start="61">
-        <li>Ridzman Zidaine</li>
-        <li>Fernando Lindez</li>
-        <li>Babacar Ndoye</li>
-        <li>Badhiel Lony Nyang</li>
-        <li>Mathieu Simoneau</li>
-        <li>Leon Dame</li>
-        <li>Jamie Dornan</li>
-        <li>Channing Tatum</li>
-        <li>Mark Wahlberg</li>
-        <li>Luka Sabbat</li>
-        <li>Pietro Boselli</li>
-        <li>Alexandre Cunha</li>
-        <li>Ivan de Pineda</li>
-        <li>Albert Delegue</li>
-        <li>Michel de Windt</li>
-        <li>Tim Easton</li>
-        <li>Enrique Palacios</li>
-        <li>Tomas Skoloudik</li>
-        <li>Sterling St. Jacques</li>
-        <li>Urs Althaus</li>
-        <li>Adonis Bosso</li>
-        <li>Fernando Cabral</li>
-        <li>Bill Curry</li>
-        <li>Renauld White</li>
-    </ol>
-</div>
+  <div class="tier-header">
+    <h3>Tier 5 — Verified Major Campaign Participants (Supermodel-Class Threshold)</h3>
+    <p class="tier-def">Minimum institutional threshold: verified participation in at least three major commercial campaigns. Some individuals in this tier nonetheless achieved global reach, but for more limited duration.</p>
+  </div>
+  <ol class="tier" style="counter-reset: tier-item 84;">
+    <li>Bob Menna</li>
+    <li>Greg Hanson</li>
+    <li>Richard Biedul</li>
+    <li>Andrea Boccaletti</li>
+    <li>Jeffrey Brezovar</li>
+    <li>Derek Brewer</li>
+    <li>Keith Brewer</li>
+    <li>Brian Buzzini</li>
+    <li>Mike Campbell</li>
+    <li>John Foster</li>
+    <li>Nick Constantino</li>
+    <li>Brett Salisbury</li>
+    <li>Brett Hollands</li>
+    <li>Rick Edwards</li>
+    <li>Jose Maria Manzanares</li>
+    <li>Tim Boyce</li>
+    <li>Alessio Pozzi</li>
+    <li>Paul Palmero</li>
+    <li>Richard Popejoy</li>
+    <li>Marco de Conciliis</li>
+    <li>Sebastian Sauve</li>
+    <li>Tomas Valdemar Hintnaus</li>
+  </ol>
+</section>
 
-<div class="tier-section">
-    <p class="tier-title">Tier 5 &mdash; Verified Major Campaign Participants (Supermodel-Class Threshold)</p>
-    <p class="tier-def">Tier 5 establishes the minimum institutional threshold: verified participation in at least three major commercial campaigns. Some individuals in this tier nonetheless achieved global reach, but for more limited duration.</p>
-    <ol class="tier-list" start="85">
-        <li>Bob Menna</li>
-        <li>Greg Hanson</li>
-        <li>Richard Biedul</li>
-        <li>Andrea Boccaletti</li>
-        <li>Jeffrey Brezovar</li>
-        <li>Derek Brewer</li>
-        <li>Keith Brewer</li>
-        <li>Brian Buzzini</li>
-        <li>Mike Campbell</li>
-        <li>John Foster</li>
-        <li>Nick Constantino</li>
-        <li>Brett Salisbury</li>
-        <li>Brett Hollands</li>
-        <li>Rick Edwards</li>
-        <li>Jose Maria Manzanares</li>
-        <li>Tim Boyce</li>
-        <li>Alessio Pozzi</li>
-        <li>Paul Palmero</li>
-        <li>Richard Popejoy</li>
-        <li>Marco de Conciliis</li>
-        <li>Sebastian Sauve</li>
-        <li>Tomas Valdemar Hintnaus</li>
-    </ol>
-</div>
+<!-- ================= APPENDIX TABLE ================= -->
+<section id="appendix">
+  <h2>Appendix: Campaign &amp; Photographer Register</h2>
+  <p>The table below is a representative, campaign-forward reference layer designed to increase institutional clarity. It does not replace the ranked registry above and does not revise tier placement. Entries list up to three major campaigns and principal photographers where institutionally relevant. This appendix is non-exhaustive by design.</p>
 
-<hr>
-
-<h2>Appendix: Campaign &amp; Photographer Register</h2>
-
-<p>The table below is a representative, campaign-forward reference layer designed to increase institutional clarity. It does not replace the ranked registry above and does not revise tier placement. Entries list up to three major campaigns and principal photographers where institutionally relevant. This appendix is non-exhaustive by design.</p>
-
-<table>
-    <thead>
+  <div class="table-wrap">
+    <table class="registry">
+      <thead>
         <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Representative Major Campaigns (3)</th>
-            <th>Principal Photographers</th>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Representative Major Campaigns</th>
+          <th>Principal Photographers</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr><td>1</td><td>Michael Flinn</td><td>Hugo Boss (global); Boss Fragrance (global); Hugo Menswear</td><td>Patrick Demarchelier; Helmut Newton</td></tr>
-        <tr><td>2</td><td>David Gandy</td><td>Dolce &amp; Gabbana (global); Light Blue (global); Marks &amp; Spencer</td><td>Mariano Vivanco; Steven Klein</td></tr>
-        <tr><td>3</td><td>Mark Vanderloo</td><td>Gucci (global); Valentino (global); Versace</td><td>Mario Testino; Bruce Weber</td></tr>
-        <tr><td>4</td><td>Jeff Aquilon</td><td>Versace (global); GQ Cover 3 times; Ralph Lauren</td><td>Bruce Weber</td></tr>
-        <tr><td>5</td><td>Sean O'Pry</td><td>Calvin Klein (global); Versace (global); fragrance</td><td>Mert &amp; Marcus; Steven Meisel</td></tr>
-        <tr><td>6</td><td>Marcus Schenkenberg</td><td>Calvin Klein Underwear (global); CK Jeans; Versace</td><td>Herb Ritts; Bruce Weber</td></tr>
-        <tr><td>7</td><td>Tyson Beckford</td><td>Polo Ralph Lauren (global); RL Fragrance; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>8</td><td>Tyson Ballou</td><td>Versace (global); Dolce &amp; Gabbana; fragrance</td><td>Steven Klein</td></tr>
-        <tr><td>9</td><td>Alton Mason</td><td>Chanel (global); luxury fashion; fragrance</td><td>Karl Lagerfeld</td></tr>
-        <tr><td>10</td><td>Jon Kortajarena</td><td>Armani (global); Tom Ford (global); fragrance campaigns</td><td>Mert &amp; Marcus; Mario Sorrenti</td></tr>
-        <tr><td>11</td><td>Lucky Blue Smith</td><td>Tommy Hilfiger (global); youth campaigns; menswear</td><td>Patrick Demarchelier</td></tr>
-        <tr><td>12</td><td>Noah Mills</td><td>Dolce &amp; Gabbana (global); fragrance; menswear</td><td>Mariano Vivanco</td></tr>
-        <tr><td>13</td><td>Bruce Hulse</td><td>GQ Cover once; Men's Fitness advertising; catalog campaigns</td><td>Bruce Weber</td></tr>
-        <tr><td>14</td><td>Matt Norklun</td><td>Fitness brands; catalog distribution; lifestyle apparel</td><td>Studio photographers</td></tr>
-        <tr><td>15</td><td>Werner Schreyer</td><td>GUESS (global); European fashion campaigns; fragrance print</td><td>Ellen von Unwerth; Wayne Maser</td></tr>
-        <tr><td>16</td><td>Terrence Sheahan</td><td>Lifestyle apparel; catalog distribution; menswear print</td><td>Patrick Demarchelier</td></tr>
-        <tr><td>17</td><td>Tony Spinelli</td><td>Fitness brands; athletic apparel; print advertising</td><td>Bruce Weber</td></tr>
-        <tr><td>18</td><td>Michael Ives</td><td>Ralph Lauren; lifestyle apparel; menswear print</td><td>Bruce Weber</td></tr>
-        <tr><td>19</td><td>Michael Bergin</td><td>Calvin Klein Underwear (global); Liz Claiborne (global); CK Jeans</td><td>Herb Ritts</td></tr>
-        <tr><td>20</td><td>Walter Schupfer</td><td>European luxury fashion; fragrance campaigns; menswear</td><td>Peter Lindbergh</td></tr>
-        <tr><td>21</td><td>Cameron Alborzian</td><td>GUESS (global); lifestyle apparel; menswear print</td><td>Wayne Maser</td></tr>
-        <tr><td>22</td><td>John Pearson</td><td>Fragrance campaigns; British menswear; luxury print</td><td>Patrick Demarchelier</td></tr>
-        <tr><td>23</td><td>Antonio Sabato Jr.</td><td>Calvin Klein Obsession (global); CK Jeans; fragrance</td><td>Bruce Weber</td></tr>
-        <tr><td>24</td><td>Ric Arango</td><td>Calvin Klein Obsession (global); CK Fragrance; CK print</td><td>Bruce Weber</td></tr>
-        <tr><td>25</td><td>Alex Lundqvist</td><td>Est&eacute;e Lauder Men (global); grooming; fragrance</td><td>Peter Lindbergh</td></tr>
-        <tr><td>26</td><td>Tony Ward</td><td>Versace (global); fashion print; fragrance</td><td>Bruce Weber</td></tr>
-        <tr><td>27</td><td>Hoyt Richards</td><td>Polo Ralph Lauren (global); lifestyle campaigns; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>28</td><td>Joel West</td><td>Versace (global); 1990s fashion campaigns; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>29</td><td>Larry Scott</td><td>Acqua di Gi&ograve; (global); fragrance print; menswear</td><td>Herb Ritts</td></tr>
-        <tr><td>30</td><td>David Boals</td><td>American lifestyle campaigns; menswear; print</td><td>Bruce Weber</td></tr>
-        <tr><td>31</td><td>Simon Nessman</td><td>Giorgio Armani (global); Armani Fragrance; menswear</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>32</td><td>Marlon Teixeira</td><td>Armani Exchange (global); Dior; menswear</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>33</td><td>Evandro Soldati</td><td>Armani Exchange (global); AX Fragrance; menswear</td><td>Francesco Carrozzini</td></tr>
-        <tr><td>34</td><td>Brad Kroenig</td><td>Chanel (global); Chanel accessories; fragrance</td><td>Karl Lagerfeld</td></tr>
-        <tr><td>35</td><td>Mathias Lauridsen</td><td>Jil Sander (global); Prada; menswear</td><td>Willy Vanderperre</td></tr>
-        <tr><td>36</td><td>Cl&eacute;ment Chabernaud</td><td>Prada (global); Prada Fragrance; luxury menswear</td><td>Steven Meisel</td></tr>
-        <tr><td>37</td><td>Lars Burmeister</td><td>Hugo Boss (global); Boss Fragrance; menswear</td><td>Peter Lindbergh</td></tr>
-        <tr><td>38</td><td>Johannes Huebl</td><td>Ralph Lauren (global); lifestyle apparel; fragrance print</td><td>Bruce Weber</td></tr>
-        <tr><td>39</td><td>Baptiste Giabiconi</td><td>Chanel (global); Chanel Fragrance; accessories</td><td>Karl Lagerfeld</td></tr>
-        <tr><td>40</td><td>Garrett Neff</td><td>Calvin Klein (global); CK Fragrance; menswear</td><td>Mario Sorrenti</td></tr>
-        <tr><td>41</td><td>Nacho Figueras</td><td>Polo Ralph Lauren (global); lifestyle campaigns; fragrance</td><td>Bruce Weber</td></tr>
-        <tr><td>42</td><td>Gabriel Aubry</td><td>Chanel (global); Givenchy; menswear</td><td>Karl Lagerfeld</td></tr>
-        <tr><td>43</td><td>Oriol Elcacho</td><td>Gucci (global); luxury menswear; fragrance</td><td>Mario Testino</td></tr>
-        <tr><td>44</td><td>Andres Velencoso</td><td>Chanel (global); Louis Vuitton; fragrance</td><td>Karl Lagerfeld</td></tr>
-        <tr><td>45</td><td>Chad White</td><td>Hugo Boss (global); fragrance; menswear</td><td>Peter Lindbergh</td></tr>
-        <tr><td>46</td><td>Jason Shaw</td><td>1990s&ndash;2000s US campaigns; menswear; fragrance</td><td>Studio photographers</td></tr>
-        <tr><td>47</td><td>Ben Hill</td><td>Lifestyle catalog campaigns; menswear; print</td><td>Studio photographers</td></tr>
-        <tr><td>48</td><td>David Fumero</td><td>Fashion campaigns; lifestyle print; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>49</td><td>Jack Scalia</td><td>Catalog campaigns; lifestyle apparel; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>50</td><td>Matt McColm</td><td>Ralph Lauren (global); lifestyle apparel; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>51</td><td>Fabio Lanzoni</td><td>Romance cover campaigns; lifestyle print; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>52</td><td>Boris Kodjoe</td><td>Versace (global); fashion print; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>53</td><td>Godfrey Gao</td><td>Louis Vuitton (global); Asian luxury campaigns; menswear</td><td>Annie Leibovitz</td></tr>
-        <tr><td>54</td><td>Broderick Hunter</td><td>Ralph Lauren (global); fragrance; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>55</td><td>Hu Bing</td><td>Louis Vuitton (global); Chinese luxury campaigns; menswear</td><td>Peter Lindbergh</td></tr>
-        <tr><td>56</td><td>Oliver Cheshire</td><td>Calvin Klein (global); Missoni (global); Hollister (global)</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>57</td><td>Jordan Barrett</td><td>Tom Ford (global); fragrance; menswear</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>58</td><td>Kit Butler</td><td>Dolce &amp; Gabbana (global); Gucci; Tommy Hilfiger</td><td>Studio photographers</td></tr>
-        <tr><td>59</td><td>Francisco Lachowski</td><td>Prada (global); Dior; menswear</td><td>Steven Meisel</td></tr>
-        <tr><td>60</td><td>Tobias Sorensen</td><td>Versace (global); Dolce &amp; Gabbana; fragrance</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>61</td><td>Ridzman Zidaine</td><td>Fragrance campaigns; luxury menswear; print</td><td>Nick Knight</td></tr>
-        <tr><td>62</td><td>Fernando Lindez</td><td>Spanish luxury youth campaigns; menswear; fragrance</td><td>Spanish fashion photographers</td></tr>
-        <tr><td>63</td><td>Babacar Ndoye</td><td>European fashion campaigns; menswear; luxury</td><td>Studio photographers</td></tr>
-        <tr><td>64</td><td>Badhiel Lony Nyang</td><td>Luxury fashion campaigns; menswear; print</td><td>Studio photographers</td></tr>
-        <tr><td>65</td><td>Mathieu Simoneau</td><td>Fragrance campaigns; menswear; lifestyle</td><td>Studio photographers</td></tr>
-        <tr><td>66</td><td>Leon Dame</td><td>Maison Margiela (global); luxury fashion; menswear</td><td>Willy Vanderperre</td></tr>
-        <tr><td>67</td><td>Jamie Dornan</td><td>Hugo Boss (global); Dior Homme; Calvin Klein</td><td>Bruce Weber</td></tr>
-        <tr><td>68</td><td>Channing Tatum</td><td>Apparel campaigns; fragrance; lifestyle</td><td>Studio photographers</td></tr>
-        <tr><td>69</td><td>Mark Wahlberg</td><td>Calvin Klein Underwear (global); CK Jeans; fragrance</td><td>Herb Ritts</td></tr>
-        <tr><td>70</td><td>Luka Sabbat</td><td>Yeezy (global); lifestyle fashion; menswear</td><td>Nick Knight</td></tr>
-        <tr><td>71</td><td>Pietro Boselli</td><td>Armani (global); menswear; fragrance</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>72</td><td>Alexandre Cunha</td><td>Balmain (global); luxury fashion; menswear</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>73</td><td>Ivan de Pineda</td><td>Latin American luxury campaigns; menswear; lifestyle</td><td>Regional photographers</td></tr>
-        <tr><td>74</td><td>Albert Delegue</td><td>European fashion campaigns; menswear; fragrance</td><td>Studio photographers</td></tr>
-        <tr><td>75</td><td>Michel de Windt</td><td>Fragrance campaigns; menswear; lifestyle</td><td>Studio photographers</td></tr>
-        <tr><td>76</td><td>Tim Easton</td><td>Versace (global); fashion print; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>77</td><td>Enrique Palacios</td><td>Tommy Hilfiger (global); fragrance; menswear</td><td>Craig McDean</td></tr>
-        <tr><td>78</td><td>Tomas Skoloudik</td><td>Armani (global); menswear; fragrance</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>79</td><td>Sterling St. Jacques</td><td>1970s disco-era campaigns; menswear; print</td><td>Studio photographers</td></tr>
-        <tr><td>80</td><td>Urs Althaus</td><td>European fashion campaigns; commercial cinema; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>81</td><td>Adonis Bosso</td><td>Givenchy (global); luxury menswear; fragrance</td><td>Mert &amp; Marcus</td></tr>
-        <tr><td>82</td><td>Fernando Cabral</td><td>European luxury menswear; fashion print; fragrance</td><td>Patrick Demarchelier</td></tr>
-        <tr><td>83</td><td>Bill Curry</td><td>Armani (global); Valentino (global); Eddie Bauer (global)</td><td>Peter Lindbergh</td></tr>
-        <tr><td>84</td><td>Renauld White</td><td>Perry Ellis (global); GQ campaigns; menswear</td><td>Bruce Weber</td></tr>
-        <tr><td>85</td><td>Bob Menna</td><td>1970s fashion campaigns; lifestyle print; menswear</td><td>Francesco Scavullo</td></tr>
-        <tr><td>86</td><td>Greg Hanson</td><td>Catalog mega-distribution; lifestyle apparel; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>87</td><td>Richard Biedul</td><td>Tailoring campaigns; British menswear; fragrance</td><td>Jason Bell</td></tr>
-        <tr><td>88</td><td>Andrea Boccaletti</td><td>Italian luxury fashion; menswear; fragrance</td><td>Italian fashion photographers</td></tr>
-        <tr><td>89</td><td>Jeffrey Brezovar</td><td>Fragrance campaigns; menswear print; lifestyle</td><td>Bruce Weber</td></tr>
-        <tr><td>90</td><td>Derek Brewer</td><td>Lifestyle apparel; print campaigns; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>91</td><td>Keith Brewer</td><td>Catalog campaigns; lifestyle apparel; menswear</td><td>Studio photographers</td></tr>
-        <tr><td>92</td><td>Brian Buzzini</td><td>Fitness apparel; lifestyle print; Davidoff Cool Water</td><td>Studio photographers</td></tr>
-        <tr><td>93</td><td>Mike Campbell</td><td>1980s fashion campaigns; lifestyle print; menswear</td><td>Richard Avedon</td></tr>
-        <tr><td>94</td><td>John Foster</td><td>Versace (global); International Male (global); fragrance</td><td>Troy Word</td></tr>
-        <tr><td>95</td><td>Nick Constantino</td><td>1980s fashion print; menswear; lifestyle</td><td>Francesco Scavullo</td></tr>
-        <tr><td>96</td><td>Brett Salisbury</td><td>Nokia (global); Nexxus Hair, Axios Man (global); Paulig (regional)</td><td>Richard Avedon / commercial photographers</td></tr>
-        <tr><td>97</td><td>Brett Hollands</td><td>Print-commercial campaigns; menswear; lifestyle</td><td>Studio photographers</td></tr>
-        <tr><td>98</td><td>Rick Edwards</td><td>British fashion campaigns; menswear; fragrance</td><td>Jason Bell</td></tr>
-        <tr><td>99</td><td>Jose Maria Manzanares</td><td>Luxury lifestyle advertising; menswear; fragrance</td><td>Editorial / studio</td></tr>
-        <tr><td>100</td><td>Tim Boyce</td><td>Giorgio Armani (advertising); Gianfranco Ferr&eacute; (advertising); Levi's (advertising)</td><td>Peter Lindbergh; Bettina Rheims; Guy Aroch</td></tr>
-        <tr><td>101</td><td>Alessio Pozzi</td><td>Givenchy; Armani; Versace</td><td>Greg Swales</td></tr>
-        <tr><td>102</td><td>Paul Palmero</td><td>European fashion campaigns; menswear; fragrance</td><td>Studio photographers</td></tr>
-        <tr><td>103</td><td>Richard Popejoy</td><td>Catalog mega-distribution; menswear; lifestyle</td><td>Studio photographers</td></tr>
-        <tr><td>104</td><td>Marco de Conciliis</td><td>European lifestyle campaigns; menswear; print</td><td>Studio photographers</td></tr>
-        <tr><td>105</td><td>Sebastian Sauve</td><td>Verified major commercial campaigns; menswear; print</td><td>Studio photographers</td></tr>
-        <tr><td>106</td><td>Tomas Valdemar Hintnaus</td><td>Calvin Klein Underwear (global); CK Jeans; menswear</td><td>Bruce Weber</td></tr>
-    </tbody>
-</table>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="name">Michael Flinn</td><td class="campaigns">Hugo Boss (global); Boss Fragrance (global); Hugo Menswear</td><td class="photog">Patrick Demarchelier; Helmut Newton</td></tr>
+        <tr><td class="rank">2</td><td class="name">David Gandy</td><td class="campaigns">Dolce &amp; Gabbana (global); Light Blue (global); Marks &amp; Spencer</td><td class="photog">Mariano Vivanco; Steven Klein</td></tr>
+        <tr><td class="rank">3</td><td class="name">Mark Vanderloo</td><td class="campaigns">Gucci (global); Valentino (global); Versace</td><td class="photog">Mario Testino; Bruce Weber</td></tr>
+        <tr><td class="rank">4</td><td class="name">Jeff Aquilon</td><td class="campaigns">Versace (global); GQ Cover (three times); Ralph Lauren</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">5</td><td class="name">Sean O'Pry</td><td class="campaigns">Calvin Klein (global); Versace (global); fragrance</td><td class="photog">Mert &amp; Marcus; Steven Meisel</td></tr>
+        <tr><td class="rank">6</td><td class="name">Marcus Schenkenberg</td><td class="campaigns">Calvin Klein Underwear (global); CK Jeans; Versace</td><td class="photog">Herb Ritts; Bruce Weber</td></tr>
+        <tr><td class="rank">7</td><td class="name">Tyson Beckford</td><td class="campaigns">Polo Ralph Lauren (global); RL Fragrance; menswear</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">8</td><td class="name">Tyson Ballou</td><td class="campaigns">Versace (global); Dolce &amp; Gabbana; fragrance</td><td class="photog">Steven Klein</td></tr>
+        <tr><td class="rank">9</td><td class="name">Alton Mason</td><td class="campaigns">Chanel (global); luxury fashion; fragrance</td><td class="photog">Karl Lagerfeld</td></tr>
+        <tr><td class="rank">10</td><td class="name">Jon Kortajarena</td><td class="campaigns">Armani (global); Tom Ford (global); fragrance campaigns</td><td class="photog">Mert &amp; Marcus; Mario Sorrenti</td></tr>
+        <tr><td class="rank">11</td><td class="name">Lucky Blue Smith</td><td class="campaigns">Tommy Hilfiger (global); youth campaigns; menswear</td><td class="photog">Patrick Demarchelier</td></tr>
+        <tr><td class="rank">12</td><td class="name">Noah Mills</td><td class="campaigns">Dolce &amp; Gabbana (global); fragrance; menswear</td><td class="photog">Mariano Vivanco</td></tr>
+        <tr><td class="rank">13</td><td class="name">Bruce Hulse</td><td class="campaigns">GQ Cover once; Men's Fitness advertising; catalog campaigns</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">14</td><td class="name">Matt Norklun</td><td class="campaigns">Fitness brands; catalog distribution; lifestyle apparel</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">15</td><td class="name">Werner Schreyer</td><td class="campaigns">GUESS (global); European fashion campaigns; fragrance print</td><td class="photog">Ellen von Unwerth; Wayne Maser</td></tr>
+        <tr><td class="rank">16</td><td class="name">Terrence Sheahan</td><td class="campaigns">Lifestyle apparel; catalog distribution; menswear print</td><td class="photog">Patrick Demarchelier</td></tr>
+        <tr><td class="rank">17</td><td class="name">Tony Spinelli</td><td class="campaigns">Fitness brands; athletic apparel; print advertising</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">18</td><td class="name">Michael Ives</td><td class="campaigns">Ralph Lauren; lifestyle apparel; menswear print</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">19</td><td class="name">Michael Bergin</td><td class="campaigns">Calvin Klein Underwear (global); Liz Claiborne (global); CK Jeans</td><td class="photog">Herb Ritts</td></tr>
+        <tr><td class="rank">20</td><td class="name">Walter Schupfer</td><td class="campaigns">European luxury fashion; fragrance campaigns; menswear</td><td class="photog">Peter Lindbergh</td></tr>
+        <tr><td class="rank">21</td><td class="name">Cameron Alborzian</td><td class="campaigns">GUESS (global); lifestyle apparel; menswear print</td><td class="photog">Wayne Maser</td></tr>
+        <tr><td class="rank">22</td><td class="name">John Pearson</td><td class="campaigns">Fragrance campaigns; British menswear; luxury print</td><td class="photog">Patrick Demarchelier</td></tr>
+        <tr><td class="rank">23</td><td class="name">Antonio Sabato Jr.</td><td class="campaigns">Calvin Klein Obsession (global); CK Jeans; fragrance</td><td class="photog">Herb Ritts</td></tr>
+        <tr><td class="rank">24</td><td class="name">Ric Arango</td><td class="campaigns">Calvin Klein Obsession (global); CK Fragrance; CK print</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">25</td><td class="name">Alex Lundqvist</td><td class="campaigns">Estée Lauder Men (global); grooming; fragrance</td><td class="photog">Peter Lindbergh</td></tr>
+        <tr><td class="rank">26</td><td class="name">Tony Ward</td><td class="campaigns">Versace (global); fashion print; fragrance</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">27</td><td class="name">Hoyt Richards</td><td class="campaigns">Polo Ralph Lauren (global); lifestyle campaigns; menswear</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">28</td><td class="name">Joel West</td><td class="campaigns">Versace (global); 1990s fashion campaigns; menswear</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">29</td><td class="name">Larry Scott</td><td class="campaigns">Acqua di Giò (global); fragrance print; menswear</td><td class="photog">Herb Ritts</td></tr>
+        <tr><td class="rank">30</td><td class="name">David Boals</td><td class="campaigns">American lifestyle campaigns; menswear; print</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">31</td><td class="name">Simon Nessman</td><td class="campaigns">Giorgio Armani (global); Armani Fragrance; menswear</td><td class="photog">Mert &amp; Marcus</td></tr>
+        <tr><td class="rank">32</td><td class="name">Marlon Teixeira</td><td class="campaigns">Armani Exchange (global); Dior; menswear</td><td class="photog">Mert &amp; Marcus</td></tr>
+        <tr><td class="rank">33</td><td class="name">Evandro Soldati</td><td class="campaigns">Armani Exchange (global); AX Fragrance; menswear</td><td class="photog">Francesco Carrozzini</td></tr>
+        <tr><td class="rank">34</td><td class="name">Brad Kroenig</td><td class="campaigns">Chanel (global); Chanel accessories; fragrance</td><td class="photog">Karl Lagerfeld</td></tr>
+        <tr><td class="rank">35</td><td class="name">Mathias Lauridsen</td><td class="campaigns">Jil Sander (global); Prada; menswear</td><td class="photog">Willy Vanderperre; David Sims</td></tr>
+        <tr><td class="rank">36</td><td class="name">Clément Chabernaud</td><td class="campaigns">Prada (global); Prada Fragrance; luxury menswear</td><td class="photog">Willy Vanderperre</td></tr>
+        <tr><td class="rank">37</td><td class="name">Lars Burmeister</td><td class="campaigns">Hugo Boss (global); Boss Fragrance; menswear</td><td class="photog">Peter Lindbergh</td></tr>
+        <tr><td class="rank">38</td><td class="name">Johannes Huebl</td><td class="campaigns">Ralph Lauren (global); lifestyle apparel; fragrance print</td><td class="photog">Peter Lindbergh; Mario Testino</td></tr>
+        <tr><td class="rank">39</td><td class="name">Baptiste Giabiconi</td><td class="campaigns">Chanel (global); Chanel Fragrance; accessories</td><td class="photog">Karl Lagerfeld</td></tr>
+        <tr><td class="rank">40</td><td class="name">Garrett Neff</td><td class="campaigns">Calvin Klein (global); CK Fragrance; menswear</td><td class="photog">Mario Sorrenti</td></tr>
+        <tr><td class="rank">41</td><td class="name">Nacho Figueras</td><td class="campaigns">Polo Ralph Lauren (global); lifestyle campaigns; fragrance</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">42</td><td class="name">Gabriel Aubry</td><td class="campaigns">Chanel (global); Givenchy; menswear</td><td class="photog">Craig McDean; Patrick Demarchelier</td></tr>
+        <tr><td class="rank">43</td><td class="name">Oriol Elcacho</td><td class="campaigns">Gucci (global); luxury menswear; fragrance</td><td class="photog">Mario Testino</td></tr>
+        <tr><td class="rank">44</td><td class="name">Andres Velencoso</td><td class="campaigns">Chanel (global); Louis Vuitton; fragrance</td><td class="photog">Inez &amp; Vinoodh; Karl Lagerfeld</td></tr>
+        <tr><td class="rank">45</td><td class="name">Chad White</td><td class="campaigns">Hugo Boss (global); fragrance; menswear</td><td class="photog">Peter Lindbergh</td></tr>
+        <tr><td class="rank">46</td><td class="name">Jason Shaw</td><td class="campaigns">1990s–2000s US campaigns; menswear; fragrance</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">47</td><td class="name">Ben Hill</td><td class="campaigns">Lifestyle catalog campaigns; menswear; print</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">48</td><td class="name">David Fumero</td><td class="campaigns">Fashion campaigns; lifestyle print; menswear</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">49</td><td class="name">Jack Scalia</td><td class="campaigns">Catalog campaigns; lifestyle apparel; menswear</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">50</td><td class="name">Matt McColm</td><td class="campaigns">Ralph Lauren (global); lifestyle apparel; menswear</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">51</td><td class="name">Fabio Lanzoni</td><td class="campaigns">Romance cover campaigns; lifestyle print; menswear</td><td class="photog">Barry McKinley (Gap); studio &amp; painted covers</td></tr>
+        <tr><td class="rank">52</td><td class="name">Boris Kodjoe</td><td class="campaigns">Versace (global); fashion print; menswear</td><td class="photog">Bruce Weber; Herb Ritts</td></tr>
+        <tr><td class="rank">53</td><td class="name">Godfrey Gao</td><td class="campaigns">Louis Vuitton (global); Asian luxury campaigns; menswear</td><td class="photog">Cédric Buchet</td></tr>
+        <tr><td class="rank">54</td><td class="name">Broderick Hunter</td><td class="campaigns">Ralph Lauren (global); fragrance; menswear</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">55</td><td class="name">Hu Bing</td><td class="campaigns">Louis Vuitton (global); Chinese luxury campaigns; menswear</td><td class="photog">Peter Lindbergh</td></tr>
+        <tr><td class="rank">56</td><td class="name">Oliver Cheshire</td><td class="campaigns">Calvin Klein (global); Missoni (global); Hollister (global)</td><td class="photog">Mert &amp; Marcus</td></tr>
+        <tr><td class="rank">57</td><td class="name">Jordan Barrett</td><td class="campaigns">Tom Ford (global); fragrance; menswear</td><td class="photog">Mert &amp; Marcus</td></tr>
+        <tr><td class="rank">58</td><td class="name">Kit Butler</td><td class="campaigns">Dolce &amp; Gabbana (global); Gucci; Tommy Hilfiger</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">59</td><td class="name">Francisco Lachowski</td><td class="campaigns">Prada (global); Dior; menswear</td><td class="photog">Steven Meisel</td></tr>
+        <tr><td class="rank">60</td><td class="name">Tobias Sorensen</td><td class="campaigns">Calvin Klein (global); Dolce &amp; Gabbana; Davidoff fragrance</td><td class="photog">Cass Bird; Daniel Jackson; Lachlan Bailey</td></tr>
+        <tr><td class="rank">61</td><td class="name">Ridzman Zidaine</td><td class="campaigns">Fragrance campaigns; luxury menswear; print</td><td class="photog">Nick Knight</td></tr>
+        <tr><td class="rank">62</td><td class="name">Fernando Lindez</td><td class="campaigns">Spanish luxury youth campaigns; menswear; fragrance</td><td class="photog">Spanish fashion photographers</td></tr>
+        <tr><td class="rank">63</td><td class="name">Babacar Ndoye</td><td class="campaigns">European fashion campaigns; menswear; luxury</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">64</td><td class="name">Badhiel Lony Nyang</td><td class="campaigns">Luxury fashion campaigns; menswear; print</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">65</td><td class="name">Mathieu Simoneau</td><td class="campaigns">Fragrance campaigns; menswear; lifestyle</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">66</td><td class="name">Leon Dame</td><td class="campaigns">Maison Margiela (global); Loro Piana; Dolce &amp; Gabbana</td><td class="photog">Mario Sorrenti; Steven Meisel</td></tr>
+        <tr><td class="rank">67</td><td class="name">Jamie Dornan</td><td class="campaigns">Calvin Klein Underwear (global); CK Jeans; Dior Homme</td><td class="photog">Steven Klein</td></tr>
+        <tr><td class="rank">68</td><td class="name">Channing Tatum</td><td class="campaigns">Apparel campaigns; fragrance; lifestyle</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">69</td><td class="name">Mark Wahlberg</td><td class="campaigns">Calvin Klein Underwear (global); CK Jeans; fragrance</td><td class="photog">Herb Ritts</td></tr>
+        <tr><td class="rank">70</td><td class="name">Luka Sabbat</td><td class="campaigns">Yeezy (global); lifestyle fashion; menswear</td><td class="photog">Nick Knight</td></tr>
+        <tr><td class="rank">71</td><td class="name">Pietro Boselli</td><td class="campaigns">Emporio Armani (global); Love Moschino; Equinox</td><td class="photog">Giampaolo Sgura</td></tr>
+        <tr><td class="rank">72</td><td class="name">Alexandre Cunha</td><td class="campaigns">Dolce &amp; Gabbana (global); luxury fashion; menswear</td><td class="photog">Mario Testino</td></tr>
+        <tr><td class="rank">73</td><td class="name">Ivan de Pineda</td><td class="campaigns">Latin American luxury campaigns; menswear; lifestyle</td><td class="photog">Regional photographers</td></tr>
+        <tr><td class="rank">74</td><td class="name">Albert Delegue</td><td class="campaigns">European fashion campaigns; menswear; fragrance</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">75</td><td class="name">Michel de Windt</td><td class="campaigns">Fragrance campaigns; menswear; lifestyle</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">76</td><td class="name">Tim Easton</td><td class="campaigns">Versace (global); fashion print; menswear</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">77</td><td class="name">Enrique Palacios</td><td class="campaigns">Armani (global); Dolce &amp; Gabbana; Tommy Hilfiger</td><td class="photog">Walter Chin</td></tr>
+        <tr><td class="rank">78</td><td class="name">Tomas Skoloudik</td><td class="campaigns">Emporio Armani (global); Dolce &amp; Gabbana; Guess Underwear</td><td class="photog">Giampaolo Sgura; Steven Klein</td></tr>
+        <tr><td class="rank">79</td><td class="name">Sterling St. Jacques</td><td class="campaigns">1970s Givenchy; Halston; YSL; Revillon furs</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">80</td><td class="name">Urs Althaus</td><td class="campaigns">European fashion campaigns; commercial cinema; menswear</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">81</td><td class="name">Adonis Bosso</td><td class="campaigns">Dolce &amp; Gabbana; Tom Ford; menswear</td><td class="photog">—</td></tr>
+        <tr><td class="rank">82</td><td class="name">Fernando Cabral</td><td class="campaigns">Tom Ford (global); Balmain; luxury menswear</td><td class="photog">Steven Klein; Mario Sorrenti</td></tr>
+        <tr><td class="rank">83</td><td class="name">Bill Curry</td><td class="campaigns">Armani (global); Valentino (global); Eddie Bauer (global)</td><td class="photog">Peter Lindbergh</td></tr>
+        <tr><td class="rank">84</td><td class="name">Renauld White</td><td class="campaigns">Perry Ellis (global); Calvin Klein; Dior Homme; first Black GQ cover (Nov 1979)</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">85</td><td class="name">Bob Menna</td><td class="campaigns">1970s fashion campaigns; lifestyle print; menswear</td><td class="photog">Arthur Elgort</td></tr>
+        <tr><td class="rank">86</td><td class="name">Greg Hanson</td><td class="campaigns">Catalog mega-distribution; lifestyle apparel; menswear</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">87</td><td class="name">Richard Biedul</td><td class="campaigns">Tailoring campaigns; British menswear; fragrance</td><td class="photog">Jason Bell</td></tr>
+        <tr><td class="rank">88</td><td class="name">Andrea Boccaletti</td><td class="campaigns">Italian luxury fashion; menswear; fragrance</td><td class="photog">Italian fashion photographers</td></tr>
+        <tr><td class="rank">89</td><td class="name">Jeffrey Brezovar</td><td class="campaigns">Fragrance campaigns; menswear print; lifestyle</td><td class="photog">Bruce Weber</td></tr>
+        <tr><td class="rank">90</td><td class="name">Derek Brewer</td><td class="campaigns">Lifestyle apparel; print campaigns; menswear</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">91</td><td class="name">Keith Brewer</td><td class="campaigns">Catalog campaigns; lifestyle apparel; menswear</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">92</td><td class="name">Brian Buzzini</td><td class="campaigns">Fitness apparel; lifestyle print; Davidoff Cool Water</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">93</td><td class="name">Mike Campbell</td><td class="campaigns">1980s fashion campaigns; lifestyle print; menswear</td><td class="photog">Richard Avedon</td></tr>
+        <tr><td class="rank">94</td><td class="name">John Foster</td><td class="campaigns">Versace (global); International Male (global); fragrance</td><td class="photog">Troy Word</td></tr>
+        <tr><td class="rank">95</td><td class="name">Nick Constantino</td><td class="campaigns">1980s fashion print; menswear; lifestyle</td><td class="photog">Francesco Scavullo</td></tr>
+        <tr><td class="rank">96</td><td class="name">Brett Salisbury</td><td class="campaigns">Nokia (global); Nexxus Hair; Axios Man (global); Paulig (regional)</td><td class="photog">Richard Avedon / commercial photographers</td></tr>
+        <tr><td class="rank">97</td><td class="name">Brett Hollands</td><td class="campaigns">Print-commercial campaigns; menswear; lifestyle</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">98</td><td class="name">Rick Edwards</td><td class="campaigns">British fashion campaigns; menswear; fragrance</td><td class="photog">Jason Bell</td></tr>
+        <tr><td class="rank">99</td><td class="name">Jose Maria Manzanares</td><td class="campaigns">Luxury lifestyle advertising; menswear; fragrance</td><td class="photog">Editorial / studio</td></tr>
+        <tr><td class="rank">100</td><td class="name">Tim Boyce</td><td class="campaigns">Giorgio Armani; Gianfranco Ferré; Levi's</td><td class="photog">Peter Lindbergh; Bettina Rheims; Guy Aroch</td></tr>
+        <tr><td class="rank">101</td><td class="name">Alessio Pozzi</td><td class="campaigns">Givenchy; Armani; Versace</td><td class="photog">Greg Swales</td></tr>
+        <tr><td class="rank">102</td><td class="name">Paul Palmero</td><td class="campaigns">European fashion campaigns; menswear; fragrance</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">103</td><td class="name">Richard Popejoy</td><td class="campaigns">Catalog mega-distribution; menswear; lifestyle</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">104</td><td class="name">Marco de Conciliis</td><td class="campaigns">European lifestyle campaigns; menswear; print</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">105</td><td class="name">Sebastian Sauve</td><td class="campaigns">Verified major commercial campaigns; menswear; print</td><td class="photog">Studio photographers</td></tr>
+        <tr><td class="rank">106</td><td class="name">Tomas Valdemar Hintnaus</td><td class="campaigns">Calvin Klein Underwear (global); CK Jeans; menswear</td><td class="photog">Bruce Weber</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-<hr>
-
-<h2>How Rankings Are Determined</h2>
-
-<p>Rankings are ordinal, not categorical.</p>
-
-<p>A model's numerical placement reflects:</p>
-<ul>
+<!-- ================= HOW RANKINGS ARE DETERMINED ================= -->
+<section id="ranking-method">
+  <h2>How Rankings Are Determined</h2>
+  <p>Rankings are ordinal, not categorical. A model's numerical placement reflects:</p>
+  <ul class="plain">
     <li>Campaign scale and frequency</li>
     <li>Brand tier and geographic scope</li>
     <li>Duration of institutional relevance</li>
     <li>Replacement dynamics within casting cycles</li>
     <li>Historical context</li>
     <li>Depth of commercial trust</li>
-</ul>
+  </ul>
+  <p>Lower number indicates higher institutional position.</p>
+</section>
 
-<p>Lower number indicates higher institutional position.</p>
-
-<hr>
-
-<h2>Honorable Mentions</h2>
-
-<ul class="honorable">
+<!-- ================= HONORABLE MENTIONS ================= -->
+<section id="honorable-mentions">
+  <h2>Honorable Mentions</h2>
+  <ul class="plain">
     <li>Rick Dietz</li>
     <li>Patrick Petitjean</li>
     <li>Vincent Gallo</li>
@@ -416,55 +699,56 @@ ol.tier-list li { margin-bottom: 2px; }
     <li>Robert Konjic</li>
     <li>Miles O'Keeffe</li>
     <li>Jason Lewis</li>
-    <li>Eric Knorpp</li>   
+    <li>Eric Knorpp</li>
     <li>Kerry Degman</li>
     <li>Arthur Kulkov</li>
     <li>Karl Lindman</li>
-</ul>
+  </ul>
+</section>
 
-<hr>
-
-<h2>What the Rankings Are Not</h2>
-
-<ul>
+<!-- ================= WHAT THE RANKINGS ARE NOT ================= -->
+<section id="what-not">
+  <h2>What the Rankings Are Not</h2>
+  <ul class="plain">
     <li>Not popularity contests</li>
     <li>Not aesthetic judgments</li>
     <li>Not cultural relevance rankings</li>
     <li>Not retrospective fame assessments</li>
-</ul>
+  </ul>
+</section>
 
-<hr>
+<!-- ================= METHODOLOGICAL RATIONALE ================= -->
+<section id="rationale">
+  <h2>Methodological Rationale</h2>
+  <p>This methodology is intentionally explicit. It exists to prevent ambiguity, revisionism, and casual reinterpretation.</p>
+  <p>The Male Model Index is designed to function as a stable, auditable, and defensible registry, comparable in structure and authority to institutional catalogs maintained by museums and archives.</p>
+</section>
 
-<h2>Methodological Rationale</h2>
+<!-- ================= INSTITUTIONAL REFERENCES ================= -->
+<section id="institutional-references">
+  <h2>Institutional References</h2>
+  <p>The Male Model Index cross-references publicly available archival and biographical materials from established fashion, media, and entertainment institutions. External references are provided to support historical context and encourage independent exploration.</p>
+</section>
 
-<p>This methodology is intentionally explicit. It exists to prevent ambiguity, revisionism, and casual reinterpretation.</p>
+<!-- ================= EDITION FOOTER ================= -->
+<section class="edition-footer">
+  <dl>
+    <dt>Edition</dt>
+    <dd>Male Model Index — Edition I (January 1972 – December 2025)</dd>
+    <dt>Registry State</dt>
+    <dd>Closed</dd>
+    <dt>Visual Policy</dt>
+    <dd>Two reference images (Michael Flinn and Ric Arango)</dd>
+    <dt>Total Population</dt>
+    <dd>106 individuals</dd>
+    <dt>Amendments</dt>
+    <dd>Not permitted without explicit authorization for a subsequent edition.</dd>
+  </dl>
 
-<p>The Male Model Index is designed to function as a stable, auditable, and defensible registry, comparable in structure and authority to institutional catalogs maintained by museums and archives.</p>
+  <p class="dedication">In memory of <a href="https://en.wikipedia.org/wiki/Franca_Sozzani" target="_blank">Franca Sozzani</a></p>
+  <p class="colophon"><a href="https://malemodelindex.com/editorial-correspondence.html">Editorial Correspondence Archive</a></p>
+</section>
 
-<hr>
-
-<h2>Institutional References</h2>
-
-<p>The Male Model Index cross-references publicly available archival and biographical materials from established fashion, media, and entertainment institutions. External references are provided to support historical context and encourage independent exploration.</p>
-
-<p><strong>Edition:</strong> Male Model Index &mdash; Edition I (January 1972 &ndash; December 2025)<br>
-<strong>Registry State:</strong> Closed<br>
-<strong>Visual Policy:</strong> Two reference images (Michael Flinn and Ric Arango)<br>
-<strong>Total Population:</strong> 106 individuals<br>
-<strong>Amendments:</strong> Not permitted without explicit authorization for a subsequent edition.</p>
-
-<div style="text-align: center; padding: 2rem 0 2.5rem; border-top: 0.5px solid #ccc; margin-top: 2rem;">
-  <p style="font-family: Georgia, serif; font-size: 15px; color: #5F5E5A; margin: 0; letter-spacing: 0.01em;">
-    In memory of
-    <a href="https://en.wikipedia.org/wiki/Franca_Sozzani"
-       style="color: #5F5E5A; text-decoration: none; border-bottom: 0.5px solid rgba(0,0,0,0.3);"
-       target="_blank">Franca Sozzani</a>
-  </p>
 </div>
-
-<div class="nav-footer">
-    <a href="editorial-correspondence.html">Editorial Correspondence Archive</a>
-</div>
-
 </body>
 </html>
